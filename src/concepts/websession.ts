@@ -1,5 +1,5 @@
 // This is (some of) the code for the WebSession concept which was introduced in lecture on 9/18.
-// We're storing the user (in the form of the username string for now) when the user logs in, and we 
+// We're storing the user (in the form of the username string for now) when the user logs in, and we
 // reset the session's user when the user logs out.
 
 import { SessionData } from "express-session";
