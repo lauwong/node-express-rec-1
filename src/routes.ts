@@ -1,6 +1,6 @@
 import { Router, getExpressRouter } from "./framework/router";
 
-import { WebSession } from "./app";
+import { User, WebSession } from "./app";
 import { WebSessionDoc } from "./concepts/websession";
 
 class Routes {
@@ -14,6 +14,12 @@ class Routes {
   async logOut(session: WebSessionDoc) {
     WebSession.end(session);
     return { msg: "Logged out!" };
+  }
+
+  @Router.post("/register")
+  async register(username: string) {
+    User.register(username);
+    return { msg: "Username registered!", user: username };
   }
 
   // If we had more concepts working, we'd add routes for those here too!

@@ -11,7 +11,13 @@ const operations = [
     endpoint: "/api/logout",
     method: "POST",
     fields: {},
-  }
+  },
+  {
+    name: "Register",
+    endpoint: "/api/register",
+    method: "POST",
+    fields: { username: "input" },
+  },
 ];
 
 const API_URL = "http://localhost:3000";
