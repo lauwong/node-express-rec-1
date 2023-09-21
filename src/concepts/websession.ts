@@ -3,6 +3,7 @@
 // reset the session's user when the user logs out.
 
 import { SessionData } from "express-session";
+import { User } from "../app";
 import { NotAllowedError, UnauthenticatedError } from "./errors";
 
 export type WebSessionDoc = SessionData;
@@ -29,6 +30,7 @@ export default class WebSessionConcept {
     // synchronization like starting a session should just consist of a series of actions that may throw
     // exceptions and should not have its own control flow.
     this.isInactive(session);
+    User.isUsernameRegistered(username);
     session.user = username;
   }
 

@@ -20,4 +20,10 @@ export default class UserConcept {
   }
 
   // TODO: Write code to make sure the username exists
+
+  isUsernameRegistered(username: string) {
+    if (this.users.filter((user) => user.username === username).length === 0) {
+      throw new NotAllowedError("User does not exist!");
+    }
+  }
 }
